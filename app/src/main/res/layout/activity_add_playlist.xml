@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".AddPlaylist">
+
+    <!-- Back Arrow Button and Title Name -->
+    <RelativeLayout
+        android:id="@+id/addplaylistbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:clickable="true"
+            android:id="@+id/backarrow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/backarrow_page9" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/backarrow"
+            android:text="Add Playlist"
+            android:textColor="@color/white"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Icon of Upload -->
+    <RelativeLayout
+        android:id="@+id/upload"
+        android:layout_width="match_parent"
+        android:layout_below="@id/addplaylistbar"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginTop="30dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="220dp"
+            android:layout_height="200dp"
+            android:src="@drawable/rounded_image_upload"/>
+        <ImageView
+            android:layout_marginTop="60dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/upload_page9"/>
+    </RelativeLayout>
+
+    <!-- Playlist Name -->
+    <RelativeLayout
+        android:id="@+id/playlistname"
+        android:layout_below="@id/upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Playlist Name"
+            android:textStyle="bold"
+            android:textColor="@color/brown"
+            android:background="@drawable/rounded_edit_text"
+            android:textColorHint="#FCC40F">
+        </EditText>
+    </RelativeLayout>
+
+    <!-- Description -->
+    <RelativeLayout
+        android:id="@+id/descriptionname"
+        android:layout_below="@id/playlistname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:hint="Description"
+            android:textColor="@color/brown"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_edit_text"
+            android:textColorHint="#FCC40F">
+        </EditText>
+    </RelativeLayout>
+
+    <!-- Add Playlist Button -->
+    <Button
+        android:id="@+id/addPlaylist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/footer"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/rounded_yellow_button"
+        android:drawableTint="@color/yellow"
+        android:text="Add Playlist"
+        android:textAllCaps="false"
+        android:textSize="17dp"
+        app:backgroundTint="@null" />
+
+    <!--  Like, Add, Search Buttons -->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2A2831">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/like_page5" />
+
+            <TextView
+                android:id="@+id/like_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/like"
+                android:layout_marginRight="50dp"
+                android:paddingLeft="8dp"
+                android:text="Liked"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/like"
+                android:src="@drawable/plus_page5" />
+
+            <TextView
+                android:id="@+id/add_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/like_text"
+                android:text="Add"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/add"
+                android:src="@drawable/search_page5" />
+
+            <TextView
+                android:id="@+id/search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search"
+                android:layout_marginRight="25dp"
+                android:layout_toRightOf="@id/add_text"
+                android:text="Search"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/listen_later"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@id/search"
+                android:src="@drawable/listen_later_page5" />
+            <TextView
+                android:id="@+id/listen_later_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/listen_later"
+                android:layout_toRightOf="@id/search_text"
+                android:text="Listen Later"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

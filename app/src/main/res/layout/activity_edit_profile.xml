@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".EditProfile">
+
+    <!-- Back Arrow Button and Record Music -->
+    <RelativeLayout
+        android:id="@+id/editprofilebar"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:clickable="true"
+            android:id="@+id/backarrow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/backarrow_page9" />
+        <TextView
+            android:id="@+id/recordmusictext"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/backarrow"
+            android:text="Edit Profile"
+            android:textColor="@color/white"
+            android:textSize="29dp"
+            android:textStyle="bold" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/black"
+            android:paddingTop="10dp"
+            android:paddingLeft="30dp"
+            android:text="Save"
+            android:textSize="15dp"
+            android:textColor="@color/yellow"
+            android:textAllCaps="false"/>
+    </RelativeLayout>
+    <!-- Image -->
+    <RelativeLayout
+        android:id="@+id/profileCircle"
+        android:layout_width="match_parent"
+        android:layout_below="@id/editprofilebar"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/brown_circle"/>
+    </RelativeLayout>
+    <!-- UserName text -->
+    <RelativeLayout
+        android:id="@+id/usernameText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileCircle"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Username"
+            android:textColor="@color/yellow"
+            android:textSize="28dp"/>
+    </RelativeLayout>
+    <!-- Email  -->
+    <RelativeLayout
+        android:id="@+id/emailTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usernameText"
+        android:layout_marginTop="30dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Email"
+            android:textSize="17dp"
+            android:textColor="@color/yellow" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_alignParentStart="true"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/password_rounded_edittext"
+            android:hint="abcd@abcd.com"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:textColor="@color/brown"
+            android:textColorHint="#FCC40F">
+        </EditText>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/email"
+            android:background="@drawable/show_button_rounded"
+            android:backgroundTint="@color/white"
+            android:paddingBottom="3dp"
+            android:text="edit"
+            android:textAllCaps="false"
+            android:textColor="#FCC40F"
+            android:textSize="16dp"
+            app:backgroundTint="@null"></Button>
+    </RelativeLayout>
+    <!-- Password  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailTxt"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Password"
+            android:textSize="17dp"
+            android:textColor="@color/yellow" />
+        <EditText
+            android:id="@+id/password"
+            android:layout_alignParentStart="true"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="0.7"
+            android:background="@drawable/password_rounded_edittext"
+            android:hint="********"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:textColor="@color/brown"
+            android:textColorHint="#FCC40F">
+        </EditText>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@id/password"
+            android:layout_alignParentEnd="true"
+            android:layout_height="60dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/show_button_rounded"
+            android:backgroundTint="@color/white"
+            android:paddingBottom="3dp"
+            android:text="edit"
+            android:textAllCaps="false"
+            android:textColor="#FCC40F"
+            android:textSize="16dp"
+            app:backgroundTint="@null">
+        </Button>
+    </RelativeLayout>
+    <!--  Like, Add, Search Buttons -->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2A2831">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/like_page5" />
+
+            <TextView
+                android:id="@+id/like_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/like"
+                android:layout_marginRight="50dp"
+                android:paddingLeft="8dp"
+                android:text="Liked"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/like"
+                android:src="@drawable/plus_page5" />
+
+            <TextView
+                android:id="@+id/add_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/like_text"
+                android:text="Add"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/add"
+                android:src="@drawable/search_page5" />
+
+            <TextView
+                android:id="@+id/search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search"
+                android:layout_marginRight="25dp"
+                android:layout_toRightOf="@id/add_text"
+                android:text="Search"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/listen_later"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@id/search"
+                android:src="@drawable/listen_later_page5" />
+            <TextView
+                android:id="@+id/listen_later_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/listen_later"
+                android:layout_toRightOf="@id/search_text"
+                android:text="Listen Later"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

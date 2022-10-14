@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context=".Signin">
+
+    <!-- Sign Up Button   -->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:backgroundTint="@color/black"
+            android:text="Sign Up"
+            android:textSize="20dp"
+            android:textAllCaps="false">
+        </Button>
+    </RelativeLayout>
+    <!--  Logo & Name  -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/main_logo"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:paddingLeft="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Musify"
+            android:gravity="center"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            android:textColor="@color/white">
+        </TextView>
+    </LinearLayout>
+
+    <!-- Email -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:hint="Email"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_edit_text"
+            android:textColorHint="#FCC40F"
+            android:inputType="textEmailAddress">
+        </EditText>
+    </LinearLayout>
+    <!-- Password  -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_weight="0.7"
+            android:id="@+id/password"
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:hint="Password"
+            android:textStyle="bold"
+            android:background="@drawable/password_rounded_edittext"
+            android:textColorHint="#FCC40F"
+            android:inputType="textPassword">
+        </EditText>
+        <Button
+            app:backgroundTint="@null"
+            android:layout_weight="0.3"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:paddingBottom="3dp"
+            android:text="Show"
+            android:layout_marginRight="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:background="@drawable/show_button_rounded"
+            android:textAllCaps="false"
+            android:textColor="#FCC40F"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="15dp">
+        </Button>
+    </LinearLayout>
+    <!-- Sign In Button  -->
+    <Button
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/white"
+        android:text="Sign In"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        android:backgroundTint="#FCC40F">
+    </Button>
+    <!-- Forgot your password Button  -->
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColor="#FCC40F"
+        android:text="Forgot your password?"
+        android:textSize="15dp"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/black">
+    </Button>
+
+</LinearLayout>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".RecordMusic">
+    <!-- Back Arrow Button and Record Music -->
+    <RelativeLayout
+        android:id="@+id/recordmusicbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:clickable="true"
+            android:id="@+id/backarrow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/backarrow_page9" />
+        <TextView
+            android:id="@+id/recordmusictext"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/backarrow"
+            android:text="Record"
+            android:textColor="@color/white"
+            android:textSize="29dp"
+            android:textStyle="bold" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="@color/black"
+            android:paddingTop="8dp"
+            android:paddingLeft="30dp"
+            android:text="Next"
+            android:textSize="15dp"
+            android:textColor="@color/yellow"
+            android:textAllCaps="false"/>
+    </RelativeLayout>
+    <!-- Despacito Image -->
+    <RelativeLayout
+        android:id="@+id/despacitoImage"
+        android:layout_width="match_parent"
+        android:layout_below="@id/recordmusicbar"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginTop="60dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="220dp"
+            android:layout_height="200dp"
+            android:src="@drawable/despacito"/>
+    </RelativeLayout>
+
+    <!-- Seekbar  -->
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_below="@id/despacitoImage"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/songTime"
+        android:layout_below="@id/seekbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:layout_marginTop="4dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1:00 / 2:45"
+            android:textSize="20dp"
+            android:textColor="@color/yellow"/>
+    </LinearLayout>
+    <!-- Record/Play Buttons -->
+    <LinearLayout
+        android:id="@+id/recordVoice"
+        android:layout_below="@id/songTime"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/record"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/circle_page11"/>
+        <ImageView
+            android:id="@+id/pause"
+            android:layout_toRightOf="@id/record"
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:background="@drawable/songname_pause_screen5"/>
+
+    </LinearLayout>
+
+    <!--  Like, Add, Search Buttons -->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="#2A2831">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/like"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="50dp"
+                android:src="@drawable/like_page5" />
+
+            <TextView
+                android:id="@+id/like_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/like"
+                android:layout_marginRight="50dp"
+                android:paddingLeft="8dp"
+                android:text="Liked"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/like"
+                android:src="@drawable/plus_page5" />
+
+            <TextView
+                android:id="@+id/add_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/like_text"
+                android:text="Add"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="50dp"
+                android:layout_toRightOf="@id/add"
+                android:src="@drawable/search_page5" />
+
+            <TextView
+                android:id="@+id/search_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/search"
+                android:layout_marginRight="25dp"
+                android:layout_toRightOf="@id/add_text"
+                android:text="Search"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/listen_later"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@id/search"
+                android:src="@drawable/listen_later_page5" />
+            <TextView
+                android:id="@+id/listen_later_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/listen_later"
+                android:layout_toRightOf="@id/search_text"
+                android:text="Listen Later"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
