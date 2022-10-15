@@ -54,6 +54,7 @@
         android:orientation="vertical"
         android:layout_marginTop="20dp">
         <EditText
+            android:id="@+id/email"
             android:paddingLeft="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
@@ -107,6 +108,7 @@
     </LinearLayout>
     <!-- Sign In Button  -->
     <Button
+        android:id="@+id/signin"
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -117,7 +119,8 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:textAllCaps="false"
-        android:backgroundTint="#FCC40F">
+        app:backgroundTint="@null"
+        android:background="@drawable/rounded_yellow_button">
     </Button>
     <!-- Forgot your password Button  -->
     <Button

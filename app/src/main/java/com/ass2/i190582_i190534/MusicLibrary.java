@@ -5,17 +5,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MusicLibrary extends AppCompatActivity {
 
     ImageView startAddPlaylist;
     ImageButton profileBtn;
     ImageView like, search, listen_later;
+    Button logout;
+
+    FirebaseAuth mAuth;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -72,6 +78,19 @@ public class MusicLibrary extends AppCompatActivity {
                 startListenLaterActivity();
             }
         });
+
+        mAuth = FirebaseAuth.getInstance();
+        logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mAuth.signOut();
+                finish();
+                Intent switchActivityIntent = new Intent(getApplicationContext(), Signin.class);
+                startActivity(switchActivityIntent);
+            }
+        });
+
     }
     private void startAddPlaylist() {
         Intent switchActivityIntent = new Intent(this, AddPlaylist.class);
