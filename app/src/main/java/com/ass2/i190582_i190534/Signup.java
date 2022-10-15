@@ -42,7 +42,7 @@ public class Signup extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
-                                startActivity(new Intent(getApplicationContext(), Signin.class));
+                                startActivity(new Intent(getApplicationContext(), CreateProfile.class));
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
