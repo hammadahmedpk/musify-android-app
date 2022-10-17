@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ass2.i190582_i190534">
-
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -21,7 +23,7 @@
             android:name=".Liked"
             android:exported="false" />
         <activity
-            android:name=".RecordMusic"
+            android:name=".PlaySong"
             android:exported="false" />
         <activity
             android:name=".SongComments"
@@ -39,7 +41,7 @@
             android:name=".ListenLater"
             android:exported="false" />
         <activity
-            android:name=".UploadMusic"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".SignupOthers"
@@ -51,7 +53,7 @@
             android:name=".Signup"
             android:exported="false" />
         <activity
-            android:name=".PlaySong"
+            android:name=".RecordMusic"
             android:exported="false" />
         <activity
             android:name=".MusicLibrary"
@@ -60,7 +62,7 @@
             android:name=".Signin"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".UploadMusic"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

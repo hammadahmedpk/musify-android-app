@@ -57,14 +57,14 @@
             android:layout_width="220dp"
             android:layout_height="200dp"
             android:src="@drawable/rounded_image_upload"/>
+
         <ImageView
-            android:layout_marginTop="60dp"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:id="@+id/upload_music"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:src="@drawable/upload_page9"/>
+            android:layout_centerInParent="true"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/upload_page9" />
     </RelativeLayout>
 
     <!-- Title Name -->
@@ -149,12 +149,13 @@
             android:textAllCaps="false"
             android:textSize="19dp"
             app:backgroundTint="@null" />
+
         <Button
             android:id="@+id/recordBtn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
             android:background="@drawable/rounded_yellow_button"
             android:text="Record"
             android:textAllCaps="false"

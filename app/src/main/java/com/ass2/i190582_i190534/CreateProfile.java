@@ -25,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.google.firebase.storage.UploadTask.TaskSnapshot;
 
 public class CreateProfile extends AppCompatActivity {
 
@@ -97,10 +96,24 @@ public class CreateProfile extends AppCompatActivity {
             public void onClick(View view) {
                 User user = new User(firstName.getText().toString(),lastName.getText().toString(), gender[0],bio.getText().toString());
                 db.getReference().child("Users").child(mAuth.getUid()).setValue(user);
-              //  storageRef.child("profile_pics").child(mAuth.getUid()).putFile(dpp).addOnSuccessListener(new OnSuccessListener<TaskSnapshot>() {
-                if(dpp != null){
-                    uploadToFirebase(dpp);
-                }
+                storageRef.child("profile_pics").child(mAuth.getUid()).putFile(dpp).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
+                        if(task.isSuccessful()){
+                            task.getResult().getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    db.getReference().child("Users").child(mAuth.getUid()).child("profile_pic").setValue(uri.toString());
+                                }
+                            });
+
+                        }
+                        else
+                        {
+                            Toast.makeText(CreateProfile.this, "Failed to upload image URL to database!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
             }
         });
 
@@ -114,19 +127,5 @@ public class CreateProfile extends AppCompatActivity {
             dpRound.setImageURI(dpp);
             dp.setBackground(null);
         }
-    }
-    private void uploadToFirebase(Uri uri){
-            final StorageReference fileRef= storageRef.child(System.currentTimeMillis()+".png");
-            fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<TaskSnapshot>() {
-                @Override
-                public void onSuccess(TaskSnapshot taskSnapshot) {
-                    fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            db.getReference().child("Users").child(mAuth.getUid()).child("profile_pic").setValue(uri.toString());
-                        }
-                    });
-                }
-            });
     }
 }
