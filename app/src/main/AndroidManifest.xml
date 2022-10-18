@@ -23,7 +23,7 @@
             android:name=".Liked"
             android:exported="false" />
         <activity
-            android:name=".PlaySong"
+            android:name=".UploadMusic"
             android:exported="false" />
         <activity
             android:name=".SongComments"
@@ -62,7 +62,7 @@
             android:name=".Signin"
             android:exported="false" />
         <activity
-            android:name=".UploadMusic"
+            android:name=".PlaySong"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

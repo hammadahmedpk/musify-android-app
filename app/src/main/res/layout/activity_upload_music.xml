@@ -50,13 +50,13 @@
         android:layout_width="match_parent"
         android:layout_below="@id/uploadmusicbar"
         android:layout_height="wrap_content">
+
         <ImageView
-            android:layout_marginTop="30dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
             android:layout_width="220dp"
             android:layout_height="200dp"
-            android:src="@drawable/rounded_image_upload"/>
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/rounded_image_upload" />
 
         <ImageView
             android:id="@+id/upload_music"
@@ -73,19 +73,20 @@
         android:layout_below="@id/upload"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
-            android:paddingLeft="20dp"
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="Title"
-            android:textStyle="bold"
-            android:textColor="@color/brown"
             android:background="@drawable/rounded_edit_text"
-            android:textColorHint="#FCC40F">
-        </EditText>
+            android:hint="Title"
+            android:paddingLeft="20dp"
+            android:textColor="@color/brown"
+            android:textColorHint="#FCC40F"
+            android:textStyle="bold"></EditText>
     </RelativeLayout>
 
     <!-- Genre  -->
@@ -94,19 +95,20 @@
         android:layout_below="@id/titlename"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
-            android:paddingLeft="20dp"
+            android:id="@+id/genre"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="Genre"
-            android:textStyle="bold"
-            android:textColor="@color/brown"
             android:background="@drawable/rounded_edit_text"
-            android:textColorHint="#FCC40F">
-        </EditText>
+            android:hint="Genre"
+            android:paddingLeft="20dp"
+            android:textColor="@color/brown"
+            android:textColorHint="#FCC40F"
+            android:textStyle="bold"></EditText>
     </RelativeLayout>
 
     <!-- Description -->
@@ -117,6 +119,7 @@
         android:layout_below="@id/genrename">
 
         <EditText
+            android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginLeft="20dp"
