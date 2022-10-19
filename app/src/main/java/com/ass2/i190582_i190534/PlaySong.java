@@ -46,7 +46,7 @@ public class PlaySong extends AppCompatActivity {
 
 
                 //  notificationChannel();//////////////////////////////////////////
-                String url = "https://firebasestorage.googleapis.com/v0/b/musify-android-app.appspot.com/o/audios%2FtCODcKqaxFREHemjWaiav1WAuWC3%2Fuploaded_songs%2Fblah?alt=media&token=755ce227-433a-44a6-83d3-925c2197f64f"; // your URL here
+                String url = "https://firebasestorage.googleapis.com/v0/b/musify-android-app.appspot.com/o/audios%2FgmsE7jAfGKfh3KrCFHf2EhZhho22%2Fuploaded_songs%2Fnew?alt=media&token=3355e935-34cd-4340-852a-c367cf0c1b90"; // your URL here
                 mediaPlayer = new MediaPlayer();
                 mediaPlayer.setAudioAttributes(
                         new AudioAttributes.Builder()
