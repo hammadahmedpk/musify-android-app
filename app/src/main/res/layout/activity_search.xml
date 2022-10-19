@@ -23,18 +23,19 @@
             android:layout_marginTop="19dp"
             android:src="@drawable/backarrow_page9" />
 
-        <EditText
+
+        <SearchView
+            android:id="@+id/searchText"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/backarrow"
             android:background="@drawable/rounded_edit_text"
-            android:hint="Search"
             android:paddingLeft="20dp"
             android:textColor="@color/brown"
             android:textColorHint="#FCC40F"
-            android:textStyle="bold"></EditText>
+            android:textStyle="bold"></SearchView>
     </RelativeLayout>
 
     <!-- Recent Searches Text -->
@@ -46,150 +47,158 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="10dp">
+
         <TextView
             android:id="@+id/byartist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="45dp"
-            android:textSize="22dp"
             android:text="Recent Searches"
-            android:textColor="@color/yellow"/>
+            android:textColor="@color/yellow"
+            android:textSize="22dp" />
     </RelativeLayout>
 
-    <!-- Recent Searched Songs -->
-    <RelativeLayout
-        android:layout_below="@id/recentText"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
-        <!-- First Song -->
-        <RelativeLayout
-            android:id="@+id/song1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        android:layout_below="@+id/recentText" />
+<!--    &lt;!&ndash; Recent Searched Songs &ndash;&gt;-->
+<!--    <RelativeLayout-->
+<!--        android:layout_below="@id/recentText"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="30dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginRight="20dp">-->
+<!--        &lt;!&ndash; First Song &ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/song1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
 
-            <ImageView
-                android:id="@+id/image1"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:src="@drawable/despacito" />
-            <TextView
-                android:id="@+id/text1"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Song Name"
-                android:textSize="18dp"
-                android:textColor="@color/white"/>
-            <TextView
-                android:id="@+id/text2"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image1"
-                android:layout_below="@id/text1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Artist"
-                android:textSize="18dp"
-                android:textColor="@color/yellow"/>
-            <ImageView
-                android:id="@+id/cross1"
-                android:layout_width="20dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_height="20dp"
-                android:src="@drawable/cross"/>
-        </RelativeLayout>
-        <!-- Second Song -->
-        <RelativeLayout
-            android:id="@+id/song2"
-            android:layout_below="@id/song1"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/image2"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:src="@drawable/playlist_screen5"/>
-            <TextView
-                android:id="@+id/text3"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Playlist Name"
-                android:textSize="18dp"
-                android:textColor="@color/white"/>
-            <TextView
-                android:id="@+id/text4"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image2"
-                android:layout_below="@id/text3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Artist"
-                android:textSize="18dp"
-                android:textColor="@color/yellow"/>
-            <ImageView
-                android:id="@+id/cross2"
-                android:layout_width="20dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_height="20dp"
-                android:src="@drawable/cross"/>
+<!--            <ImageView-->
+<!--                android:id="@+id/image1"-->
+<!--                android:layout_width="90dp"-->
+<!--                android:layout_height="90dp"-->
+<!--                android:src="@drawable/despacito" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/text1"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_toRightOf="@id/image1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Song Name"-->
+<!--                android:textSize="18dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/text2"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_toRightOf="@id/image1"-->
+<!--                android:layout_below="@id/text1"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Artist"-->
+<!--                android:textSize="18dp"-->
+<!--                android:textColor="@color/yellow"/>-->
+<!--            <ImageView-->
+<!--                android:id="@+id/cross1"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:src="@drawable/cross"/>-->
+<!--        </RelativeLayout>-->
+<!--        &lt;!&ndash; Second Song &ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/song2"-->
+<!--            android:layout_below="@id/song1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_height="wrap_content">-->
 
-        </RelativeLayout>
-        <!-- Third Song -->
-        <RelativeLayout
-            android:id="@+id/song3"
-            android:layout_below="@id/song2"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/image3"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:src="@drawable/playlist_screen5"/>
-            <TextView
-                android:id="@+id/text5"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Playlist Name"
-                android:textSize="18dp"
-                android:textColor="@color/white"/>
-            <TextView
-                android:id="@+id/text6"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image3"
-                android:layout_below="@id/text5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Artist"
-                android:textSize="18dp"
-                android:textColor="@color/yellow"/>
-            <ImageView
-                android:id="@+id/cross3"
-                android:layout_width="20dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_height="20dp"
-                android:src="@drawable/cross"/>
+<!--            <ImageView-->
+<!--                android:id="@+id/image2"-->
+<!--                android:layout_width="90dp"-->
+<!--                android:layout_height="90dp"-->
+<!--                android:src="@drawable/playlist_screen5" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/text3"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_toRightOf="@id/image2"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Playlist Name"-->
+<!--                android:textSize="18dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/text4"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_toRightOf="@id/image2"-->
+<!--                android:layout_below="@id/text3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Artist"-->
+<!--                android:textSize="18dp"-->
+<!--                android:textColor="@color/yellow"/>-->
+<!--            <ImageView-->
+<!--                android:id="@+id/cross2"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:src="@drawable/cross"/>-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
+<!--        &lt;!&ndash; Third Song &ndash;&gt;-->
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/song3"-->
+<!--            android:layout_below="@id/song2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_height="wrap_content">-->
 
-    </RelativeLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/image3"-->
+<!--                android:layout_width="90dp"-->
+<!--                android:layout_height="90dp"-->
+<!--                android:src="@drawable/playlist_screen5" />-->
+<!--            <TextView-->
+<!--                android:id="@+id/text5"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_toRightOf="@id/image3"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Playlist Name"-->
+<!--                android:textSize="18dp"-->
+<!--                android:textColor="@color/white"/>-->
+<!--            <TextView-->
+<!--                android:id="@+id/text6"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_toRightOf="@id/image3"-->
+<!--                android:layout_below="@id/text5"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Artist"-->
+<!--                android:textSize="18dp"-->
+<!--                android:textColor="@color/yellow"/>-->
+<!--            <ImageView-->
+<!--                android:id="@+id/cross3"-->
+<!--                android:layout_width="20dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_height="20dp"-->
+<!--                android:src="@drawable/cross"/>-->
+
+<!--        </RelativeLayout>-->
+
+<!--    </RelativeLayout>-->
 
     <!--  Like, Add, Search Buttons -->
     <RelativeLayout

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class AddPlaylist extends AppCompatActivity {
     ImageView backButton;
+    ImageView like, search, add, listen_later;
     Button addPlaylist;
     @SuppressLint("WrongViewCast")
     @Override
@@ -31,6 +32,43 @@ public class AddPlaylist extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startUploadMusic();
+            }
+        });
+
+        // For Switching Activities on Footer
+        like = findViewById(R.id.like);
+        like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Liked.class);
+                startActivity(intent);
+            }
+        });
+
+        add = findViewById(R.id.add);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AddPlaylist.class);
+                startActivity(intent);
+            }
+        });
+
+        search = findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Search.class);
+                startActivity(intent);
+            }
+        });
+
+        listen_later = findViewById(R.id.listen_later);
+        listen_later.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListenLater.class);
+                startActivity(intent);
             }
         });
     }
