@@ -43,18 +43,26 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/online_rv"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     </RelativeLayout>
 
-    <!--     Like, Add, Search Buttons -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:id="@+id/chats_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:layout_below="@id/header_section" />
+
+    <!-- Other Buttons -->
     <RelativeLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
@@ -71,7 +79,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="0.1"
-                android:layout_height="45dp"
+                android:layout_height="38dp"
                 android:background="@drawable/icons8_chat_48"/>
             <View
                 android:layout_width="0dp"
@@ -80,7 +88,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="0.1"
-                android:layout_height="45dp"
+                android:layout_height="38dp"
                 android:background="@drawable/icons8_phone_50"/>
             <View
                 android:layout_width="0dp"
@@ -89,16 +97,17 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="0.1"
-                android:layout_height="45dp"
+                android:layout_height="38dp"
                 android:background="@drawable/icons8_plus_48"/>
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.1"/>
             <ImageView
+                android:id="@+id/contacts"
                 android:layout_width="0dp"
                 android:layout_weight="0.1"
-                android:layout_height="45dp"
+                android:layout_height="36dp"
                 android:background="@drawable/icons8_person_64"/>
             <View
                 android:layout_width="0dp"
@@ -107,7 +116,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_weight="0.1"
-                android:layout_height="45dp"
+                android:layout_height="38dp"
                 android:background="@drawable/icons8_settings_48"/>
             <View
                 android:layout_width="0dp"

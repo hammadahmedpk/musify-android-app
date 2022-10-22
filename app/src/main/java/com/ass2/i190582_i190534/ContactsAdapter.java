@@ -32,16 +32,15 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     }
     @NonNull
     @Override
-    public ContactsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_contacts, parent, false);
-        return new com.ass2.i190582_i190534.ContactsAdapter.ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ContactsAdapter.ViewHolder holder, int position) {
-      //      holder.name.setText(ls.getName());
-      //      holder.phone_number.setText(Person.getPhone_number());
-
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.name.setText(ls.get(position).getName());
+        holder.phone_number.setText(ls.get(position).getPhone_number());
     }
 
     @Override
@@ -55,42 +54,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
             super(itemView);
             name = itemView.findViewById(R.id.name);
             phone_number = itemView.findViewById(R.id.phone_number);
-
         }
     }
 }
-
-//    public ContactsAdapter(@NonNull FirebaseRecyclerOptions<Person> options) {
-//        super(options);
-//    }
-//
-//
-//
-//        @NonNull
-//        @Override
-//        public com.ass2.i190582_i190534.ContactsAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-//            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_contacts, parent, false);
-//            return new com.ass2.i190582_i190534.ContactsAdapter.myViewHolder(view);
-//        }
-//
-//        @Override
-//        protected void onBindViewHolder(@NonNull com.ass2.i190582_i190534.ContactsAdapter.myViewHolder holder, int position, @NonNull Person model) {
-////        holder.image.setText(model.getImage());
-//            holder.name.setText(model.getName());
-//            holder.phone_number.setText(model.getPhone_number());
-//        }
-//
-//        class myViewHolder extends RecyclerView.ViewHolder{
-//            TextView name, phone_number;
-//
-//            public myViewHolder(@NonNull View itemView) {
-//                super(itemView);
-//
-//               name = itemView.findViewById(R.id.name);
-//               phone_number = itemView.findViewById(R.id.phone_number);
-//
-//            }
-//        }
-//    }
-
 

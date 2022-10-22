@@ -6,7 +6,6 @@ public class OnlineUsers {
     public OnlineUsers(){
 
     }
-
     public OnlineUsers(String profile_pic) {
         this.profile_pic = profile_pic;
     }

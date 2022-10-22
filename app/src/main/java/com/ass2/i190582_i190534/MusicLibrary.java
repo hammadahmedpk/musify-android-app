@@ -93,8 +93,9 @@ public class MusicLibrary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
+//                OnlineStatus.updateUserStatus();
                 finish();
-                Intent switchActivityIntent = new Intent(getApplicationContext(), Signin.class);
+                Intent switchActivityIntent = new Intent(getApplicationContext(), Signup.class);
                 startActivity(switchActivityIntent);
             }
         });

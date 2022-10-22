@@ -20,7 +20,10 @@ public class OnlineUsersAdapter extends FirebaseRecyclerAdapter<OnlineUsers, Onl
 
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull OnlineUsers model) {
-        Picasso.get().load(model.getProfile_pic()).into(holder.image);
+        // Don't show offline users
+//        if(model.getStatus().equals("true")){
+            Picasso.get().load(model.getProfile_pic()).into(holder.image);
+//        }
     }
 
     @NonNull
@@ -32,10 +35,8 @@ public class OnlineUsersAdapter extends FirebaseRecyclerAdapter<OnlineUsers, Onl
 
     class myViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
-
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-
             image = itemView.findViewById(R.id.image);
 
         }

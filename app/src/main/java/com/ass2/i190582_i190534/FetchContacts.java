@@ -24,7 +24,6 @@ import java.util.ArrayList;
 
 public class FetchContacts extends AppCompatActivity {
     public static final int REQUEST_READ_CONTACTS = 79;
-    TextView contacts;
     ArrayList<Person> contacts_list;
     RecyclerView recyclerView;
     ContactsAdapter adapter;
@@ -56,9 +55,9 @@ public class FetchContacts extends AppCompatActivity {
         while(c.moveToNext()){
             @SuppressLint("Range") String name = c.getString(c.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
             @SuppressLint("Range") String mobile = c.getString(c.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-            Toast.makeText(this, name.toString(), Toast.LENGTH_SHORT).show();
+            contacts_list.add(new Person(name, mobile));
+//            Toast.makeText(this, name.toString(), Toast.LENGTH_SHORT).show();
            // contacts_list.add(name+ " "+mobile +"\n");
-            contacts.setText(contacts_list.toString());
         }
     }
 
