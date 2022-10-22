@@ -4,37 +4,35 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/drawable-v24/brown_circle.xml" value="0.1435" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/drawable/add_photo.xml" value="0.1415" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/drawable/img.xml" value="0.1435" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/drawable/round_circle.xml" value="0.1435" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/drawable/test.xml" value="0.1415" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_chats.xml" value="0.1796875" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_contacts.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_create_profile.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.1796875" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_fetch_contacts.xml" value="0.1" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_listen_later.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_play_song.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_record_music.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_second.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_signin.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_signup.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_upload_music.xml" value="0.1796875" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/comment_box.xml" value="0.135" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/fragment_chat.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/layout.xml" value="0.165625" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/online_users_row.xml" value="0.1796875" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/row_contacts.xml" value="0.165625" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/search_song_row.xml" value="0.1796875" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/show_users.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/menu/menu.xml" value="0.1796875" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/rounded_edit_text.xml" value="0.135" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/rounded_image_buttons.xml" value="0.135" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/rounded_image_upload.xml" value="0.135" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/header_messenger_screen.xml" value="0.135" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/image_vector.xml" value="0.1325" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_add_playlist.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_create_profile.xml" value="0.1" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_messenger_page.xml" value="0.25" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_music_library.xml" value="0.1" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_otp.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_search.xml" value="0.22" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_signin.xml" value="0.1" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_signup.xml" value="0.22" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_upload_music.xml" value="0.22" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/online_users_row.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/search_song_row.xml" value="0.33" />
       </map>
     </option>
   </component>
