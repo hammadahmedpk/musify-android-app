@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.squareup.picasso.Picasso;
 
 public class SongsAdapter extends FirebaseRecyclerAdapter<Song, SongsAdapter.myViewHolder> {
     /**
@@ -35,7 +36,7 @@ public class SongsAdapter extends FirebaseRecyclerAdapter<Song, SongsAdapter.myV
 //        holder.image.setText(model.getImage());
         holder.title.setText(model.getTitle());
         holder.artist.setText("Artist");
-
+        Picasso.get().load(model.getImage()).into(holder.image);
     }
 
     class myViewHolder extends RecyclerView.ViewHolder{

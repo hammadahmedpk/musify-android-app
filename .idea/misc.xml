@@ -16,11 +16,24 @@
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_signin.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_signup.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_upload_music.xml" value="0.1796875" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/comment_box.xml" value="0.135" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/rounded_edit_text.xml" value="0.135" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/rounded_image_buttons.xml" value="0.135" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/rounded_image_upload.xml" value="0.135" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/header_messenger_screen.xml" value="0.135" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/image_vector.xml" value="0.1325" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_add_playlist.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_create_profile.xml" value="0.1" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_messenger_page.xml" value="0.25" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_music_library.xml" value="0.1" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_otp.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_search.xml" value="0.22" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_signin.xml" value="0.1" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_signup.xml" value="0.22" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_upload_music.xml" value="0.22" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/online_users_row.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/search_song_row.xml" value="0.33" />
       </map>
     </option>

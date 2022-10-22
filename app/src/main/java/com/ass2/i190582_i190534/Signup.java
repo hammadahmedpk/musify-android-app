@@ -17,8 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Signup extends AppCompatActivity {
 
-    EditText email, password;
-    Button signup;
+    EditText number;
+    Button signin;
     FirebaseAuth mAuth;
 
     @Override
@@ -26,33 +26,42 @@ public class Signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        signup = findViewById(R.id.signup);
+        number = findViewById(R.id.number);
+        signin = findViewById(R.id.signin);
         mAuth = FirebaseAuth.getInstance();
 
-        signup.setOnClickListener(new View.OnClickListener() {
+        signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAuth.createUserWithEmailAndPassword(
-                                email.getText().toString(),
-                                password.getText().toString()
-                        )
-                        // Callbacks
-                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                            @Override
-                            public void onSuccess(AuthResult authResult) {
-                                startActivity(new Intent(getApplicationContext(), CreateProfile.class));
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(getApplicationContext(), "Failed to Signup!", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                Intent intent = new Intent(getApplicationContext(),OTP.class);
+                intent.putExtra("mobile", number.getText().toString());
+                startActivity(intent);
             }
         });
+
+
+//        signup.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mAuth.createUserWithEmailAndPassword(
+//                                email.getText().toString(),
+//                                password.getText().toString()
+//                        )
+//                        // Callbacks
+//                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                            @Override
+//                            public void onSuccess(AuthResult authResult) {
+//                                startActivity(new Intent(getApplicationContext(), CreateProfile.class));
+//                            }
+//                        })
+//                        .addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                Toast.makeText(getApplicationContext(), "Failed to Signup!", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//            }
+//        });
     }
 
     @Override

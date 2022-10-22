@@ -19,7 +19,7 @@ public class MusicLibrary extends AppCompatActivity {
     ImageView startAddPlaylist;
     ImageButton profileBtn;
     ImageView like, search, listen_later;
-    Button logout;
+    Button logout, messenger;
 
     FirebaseAuth mAuth;
 
@@ -79,6 +79,14 @@ public class MusicLibrary extends AppCompatActivity {
             }
         });
 
+        messenger = findViewById(R.id.messenger);
+        messenger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MessengerPage.class);
+                startActivity(intent);
+            }
+        });
         mAuth = FirebaseAuth.getInstance();
         logout = findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
