@@ -31,7 +31,10 @@
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/show_users.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/menu/menu.xml" value="0.1796875" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/add_photo.xml" value="0.1355" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/header_messenger_screen.xml" value="0.1355" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/receiver_bubble.xml" value="0.1355" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/sender_bubble.xml" value="0.1355" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_add_playlist.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_chat_details.xml" value="0.18" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_create_profile.xml" value="0.1" />
@@ -47,7 +50,9 @@
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_signup_others.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/messenger_page_chats_row.xml" value="0.203125" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/online_users_row.xml" value="0.1" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/receiver_message.xml" value="0.25" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/row_contacts.xml" value="0.33" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/sender_message.xml" value="0.25" />
       </map>
     </option>
   </component>
