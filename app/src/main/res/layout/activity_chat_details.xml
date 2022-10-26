@@ -48,15 +48,16 @@
             android:textColor="@color/white"
             android:textSize="16dp"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/status"
-            android:layout_toRightOf="@+id/dp"
             android:layout_width="wrap_content"
-            android:layout_marginLeft="2dp"
-            android:textSize="13dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name"
-            android:text="Online"/>
+            android:layout_marginLeft="2dp"
+            android:layout_toRightOf="@+id/dp"
+            android:text="Online"
+            android:textSize="13dp" />
 
         <!--  Call and Video Call Button  -->
         <ImageView
@@ -82,9 +83,11 @@
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chatRecyclerView"
-        android:layout_below="@id/header_section"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@id/footer"
+        android:paddingBottom="20dp"
+        android:layout_below="@id/header_section" />
 
     <RelativeLayout
         android:id="@+id/footer"

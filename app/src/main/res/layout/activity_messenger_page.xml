@@ -55,12 +55,12 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="20dp"
         android:id="@+id/chats_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/footer"
-        android:layout_below="@id/header_section" />
+        android:layout_below="@id/header_section"
+        android:layout_marginTop="20dp" />
 
     <!-- Other Buttons -->
     <RelativeLayout
