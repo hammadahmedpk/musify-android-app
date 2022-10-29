@@ -1,15 +1,23 @@
 package com.ass2.i190582_i190534;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
@@ -19,13 +27,17 @@ public class ChatAdapter extends RecyclerView.Adapter{
 
     ArrayList<MessageModel> messageModels;
     Context context;
+    String senderID;
+    String receiverID;
 
     int SENDER_VIEW_TYPE = 1;
     int RECEIVER_VIEW_TYPE = 2;
 
-    public ChatAdapter(ArrayList<MessageModel> messageModels, Context context) {
+    public ChatAdapter(ArrayList<MessageModel> messageModels, Context context, String senderID, String receiverID) {
         this.messageModels = messageModels;
         this.context = context;
+        this.senderID = senderID;
+        this.receiverID = receiverID;
     }
 
 
@@ -61,10 +73,71 @@ public class ChatAdapter extends RecyclerView.Adapter{
 
         if(holder.getClass() ==  SenderViewHolder.class){
             ((SenderViewHolder)holder).senderMsg.setText(messageModel.getMessage());
+            ((SenderViewHolder)holder).senderTime.setText(messageModel.getTimestamp());
+
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //MessageDialogueBox msg = new MessageDialogueBox();
+                    ////Toast.makeText(context, messageModel.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                    //new MessageDialogueBox().show(msg.getChildFragmentManager(),"");
+                    String [] chats = {"Edit Message", "Delete Message"};
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setTitle("Message Options")
+                            .setItems(chats, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    if(chats[which].equals("Edit Message")){
+                                        //Toast.makeText(context, "Edit", Toast.LENGTH_SHORT).show();
+                                        final EditText txt = new EditText(context);
+                                        txt.setText(messageModels.get(position).getMessage());
+                                        new AlertDialog.Builder(context)
+                                                .setTitle("Edit Text")
+                                                .setView(txt)
+                                                .setPositiveButton("Save", new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                                        String textMsg = txt.getText().toString();
+
+                                                        // Updating the message in Database
+
+                                                        // Updating in Sender Room
+                                                        final String senderRoom = senderID + receiverID;
+                                                        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(senderRoom).child(messageModels.get(position).getMessageID());
+                                                        dbRef.child("message").setValue(textMsg);
+
+                                                        // Updating from Receiver Room
+                                                        final String receiverRoom = receiverID + senderID;
+                                                        dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(receiverRoom).child(messageModels.get(position).getMessageID());
+                                                        dbRef.child("message").setValue(textMsg);
+                                                    }
+                                                })
+                                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                                    public void onClick(DialogInterface dialog, int whichButton) {
+                                                    }
+                                                })
+                                                .show();
+                                    }
+                                    else
+                                    {
+                                        // Deleting from Sender Room
+                                        final String senderRoom = senderID + receiverID;
+                                        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(senderRoom).child(messageModels.get(position).getMessageID());
+                                        dbRef.removeValue();
+
+                                        // Deleting from Receiver Room
+                                        final String receiverRoom = receiverID + senderID;
+                                        dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(receiverRoom).child(messageModels.get(position).getMessageID());
+                                        dbRef.removeValue();
+                                    }
+                                }
+                            });
+                    builder.show();
+                }
+            });
         }
         else
         {
             ((ReceiverViewHolder)holder).receiverMsg.setText(messageModel.getMessage());
+            ((ReceiverViewHolder)holder).receiverTime.setText(messageModel.getTimestamp());
         }
     }
 

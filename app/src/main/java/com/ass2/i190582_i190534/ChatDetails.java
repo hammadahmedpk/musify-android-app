@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.akexorcist.screenshotdetection.ScreenshotDetectionDelegate;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -21,8 +22,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 
 public class ChatDetails extends AppCompatActivity {
@@ -61,7 +65,7 @@ public class ChatDetails extends AppCompatActivity {
 
         chatRecyclerView = findViewById(R.id.chatRecyclerView);
         final ArrayList<MessageModel> messageModels = new ArrayList<>();
-        final ChatAdapter chatAdapter = new ChatAdapter(messageModels, this);
+        final ChatAdapter chatAdapter = new ChatAdapter(messageModels, this, senderID, receiverID);
         chatRecyclerView.setAdapter(chatAdapter);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         chatRecyclerView.setLayoutManager(layoutManager);
@@ -98,16 +102,26 @@ public class ChatDetails extends AppCompatActivity {
             public void onClick(View view) {
                 String message = etMessage.getText().toString();
                 final MessageModel model = new MessageModel(senderID, message);
-                model.setTimestamp(new Date().getTime());
+                //model.setTimestamp(new Date().getTime());
+                Date dataAndTime = Calendar.getInstance().getTime();
+                SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm", Locale.getDefault());
+                String time = timeFormat.format(dataAndTime);
+                model.setTimestamp(time);
+
+                String randomID = db.getReference().child("Chats").push().getKey();
+                model.setMessageID(randomID);
                 etMessage.setText(""); // So that edittext gets empty after a message has been sent
 
                 // Making a new child for chats
                 // Sender Stuff
-                db.getReference().child("Chats").child(senderRoom).push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+                //db.getReference().child("Chats").child(senderRoom).push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+                db.getReference().child("Chats").child(senderRoom).child(randomID).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         // Reciever Stuff
-                        db.getReference().child("Chats").child(receiverRoom).push().setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        //String recvRandomID = db.getReference().child("Chats").push().getKey();
+                        //model.setMessageID(recvRandomID);
+                        db.getReference().child("Chats").child(receiverRoom).child(randomID).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
 

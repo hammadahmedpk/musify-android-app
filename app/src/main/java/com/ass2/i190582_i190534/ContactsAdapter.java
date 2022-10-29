@@ -23,12 +23,13 @@ import java.util.List;
 
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHolder> {
     ArrayList<Person> ls;
+    ArrayList<Person> itemsCopy;
     Context c;
-    Intent intent;
     public ContactsAdapter(ArrayList<Person> ls, Context c) {
         this.ls = ls;
         this.c = c;
-
+        this.itemsCopy = new ArrayList<>();
+        this.itemsCopy.addAll(ls);
     }
     @NonNull
     @Override
@@ -41,6 +42,22 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.name.setText(ls.get(position).getName());
         holder.phone_number.setText(ls.get(position).getPhone_number());
+    }
+
+    // To search contacts
+    public void filter(String text) {
+        ls.clear();
+        if(text.isEmpty()){
+            ls.addAll(itemsCopy);
+        } else{
+            text = text.toLowerCase();
+            for(Person person: itemsCopy){
+                if(person.name.toLowerCase().contains(text) || person.phone_number.toLowerCase().contains(text)){
+                    ls.add(person);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     @Override

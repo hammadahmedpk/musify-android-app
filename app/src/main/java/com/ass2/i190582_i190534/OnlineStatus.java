@@ -46,11 +46,19 @@ public class OnlineStatus {
                     //Calendar.getInstance().getTime();
                     long UTC_TIMEZONE=Calendar.getInstance().getTimeInMillis();
                     String OUTPUT_DATE_FORMATE="dd-MM-yyyy - hh:mm a";
-                    String time = getDate(Calendar.getInstance().getTimeInMillis());
+                    //String time = getDate(Calendar.getInstance().getTimeInMillis());
 
-                    Calendar calendar = Calendar.getInstance();
-                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd:MM:yyyy hh:mm a");
-                    String dateTime = simpleDateFormat.format(calendar.getTime());
+                    Date dateAndTime = Calendar.getInstance().getTime();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd:MM:yyyy", Locale.getDefault());
+                    SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm a", Locale.getDefault());
+                    String time = timeFormat.format(dateAndTime);
+                    String date = dateFormat.format(dateAndTime);
+
+                    String dateTime = date + " " + time;
+
+                    //Calendar calendar = Calendar.getInstance();
+                    //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd:MM:yyyy hh:mm a");
+                    //String dateTime = simpleDateFormat.format(calendar.getTime());
                     lastSeenRef.onDisconnect().setValue(dateTime);
                     //lastSeenRef.onDisconnect().setValue(getDateFromUTCTimestamp(new Date().getTime(),OUTPUT_DATE_FORMATE));
                     //lastSeenRef.onDisconnect().setValue(getDateFromUTCTimestamp(UTC_TIMEZONE,OUTPUT_DATE_FORMATE));

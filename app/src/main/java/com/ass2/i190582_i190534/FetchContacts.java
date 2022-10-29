@@ -4,13 +4,17 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +31,7 @@ public class FetchContacts extends AppCompatActivity {
     ArrayList<Person> contacts_list;
     RecyclerView recyclerView;
     ContactsAdapter adapter;
+    Button newContacts;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +52,37 @@ public class FetchContacts extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         adapter = new ContactsAdapter(contacts_list, getApplicationContext());
         recyclerView.setAdapter(adapter) ;
+
+
+        // For search functionality
+        SearchView searchView = (SearchView) findViewById(R.id.searchText); // inititate a search view
+        CharSequence query = searchView.getQuery();
+        searchView.setQueryHint("Search Contacts");
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                adapter.filter(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                adapter.filter(s);
+                return false;
+            }
+        });
+
+        // New Contacts
+        newContacts = findViewById(R.id.newContacts);
+        newContacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), NewContacts.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void getContact() {

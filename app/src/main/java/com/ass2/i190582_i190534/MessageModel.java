@@ -2,13 +2,29 @@ package com.ass2.i190582_i190534;
 
 public class MessageModel {
     String uID, message;
-    Long timestamp;
+    String timestamp;
+    String messageID;
 
     public MessageModel(){
 
     }
 
-    public MessageModel(String uID, String message, Long timestamp) {
+    public String getMessageID() {
+        return messageID;
+    }
+
+    public void setMessageID(String messageID) {
+        this.messageID = messageID;
+    }
+
+    public MessageModel(String uID, String message, String timestamp, String messageID) {
+        this.uID = uID;
+        this.message = message;
+        this.timestamp = timestamp;
+        this.messageID = messageID;
+    }
+
+    public MessageModel(String uID, String message, String timestamp) {
         this.uID = uID;
         this.message = message;
         this.timestamp = timestamp;
@@ -35,11 +51,11 @@ public class MessageModel {
         this.message = message;
     }
 
-    public Long getTimestamp() {
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Long timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
 }

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".NewContacts">
+    <!-- Back Arrow Button-->
+    <RelativeLayout
+        android:id="@+id/newcontactsbar"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backarrow"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            android:src="@drawable/backarrow_page9" />
+        <TextView
+            android:id="@+id/newContactText"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginLeft="18dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/backarrow"
+            android:text="Add New Contact"
+            android:textColor="@color/white"
+            android:textSize="29dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- Last Name  -->
+    <RelativeLayout
+        android:id="@+id/lastNameRel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newcontactsbar"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:text="Contact Name"
+            android:textSize="17dp"
+            android:textColor="@color/yellow" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/nameText"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Alex Higgins"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:textColor="@color/brown"
+            android:textColorHint="#FCC40F">
+        </EditText>
+        <TextView
+            android:id="@+id/numText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:text="Contact Name"
+            android:layout_below="@id/name"
+            android:textSize="17dp"
+            android:textColor="@color/yellow" />
+
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/numText"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="03331234567"
+            android:inputType="number"
+            android:paddingLeft="20dp"
+            android:textColor="@color/brown"
+            android:textColorHint="#FCC40F">
+        </EditText>
+
+        <!-- Create Profile Button  -->
+        <Button
+            android:id="@+id/addContact"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/number"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/rounded_yellow_button"
+            android:text="Add Contact"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null">
+        </Button>
+    </RelativeLayout>
+</RelativeLayout>

@@ -22,25 +22,57 @@
             android:layout_marginTop="15dp"
             android:clickable="true"
             android:src="@drawable/backarrow_page9" />
+
         <TextView
             android:id="@+id/recordmusictext"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
+            android:layout_toRightOf="@+id/backarrow"
             android:layout_marginLeft="18dp"
             android:layout_marginTop="10dp"
-            android:layout_centerHorizontal="true"
             android:text="Contacts"
             android:textColor="@color/white"
             android:textSize="29dp"
             android:textStyle="bold" />
+        <SearchView
+            android:id="@+id/searchText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/recordmusictext"
+            android:background="@drawable/rounded_edit_text"
+            android:paddingLeft="20dp"
+            android:textColor="@color/brown"
+            android:textColorHint="#FCC40F"
+            android:textStyle="bold">
+        </SearchView>
+        <!-- Create Profile Button  -->
+        <Button
+            android:id="@+id/newContacts"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/searchText"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_yellow_button"
+            android:text="Add New Contacts"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:backgroundTint="@null">
+
+        </Button>
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/header"
-        android:layout_marginTop="20dp"
         android:id="@+id/recycle_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="20dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 
