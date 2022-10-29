@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +20,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
 
 import java.nio.ReadOnlyBufferException;
 import java.util.Calendar;
@@ -30,6 +34,7 @@ public class MessengerPage extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseDatabase db;
     ImageView contacts;
+    ImageView newChat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,17 +44,20 @@ public class MessengerPage extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         online_users_rv = findViewById(R.id.online_rv);
+        DatabaseReference onlineUsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        Query onlineUsersQuery = onlineUsersRef.orderByChild("status").equalTo("true");
+
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         online_users_rv.setLayoutManager(layoutManager);
 
         FirebaseRecyclerOptions<OnlineUsers> options =
                 new FirebaseRecyclerOptions.Builder<OnlineUsers>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Users").orderByChild("firstName"), OnlineUsers.class)
+                        .setQuery(onlineUsersQuery, OnlineUsers.class)
                         .build();
 
         online_users_adapter = new OnlineUsersAdapter(options);
-        online_users_rv.setAdapter(online_users_adapter) ;
+        online_users_rv.setAdapter(online_users_adapter);
 
         contacts = findViewById(R.id.contacts);
         contacts.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +78,17 @@ public class MessengerPage extends AppCompatActivity {
                         .build();
 
         chats_adapter = new MessengerPageChatsAdapter(chat_options);
-        chats_rv.setAdapter(chats_adapter) ;
+        chats_rv.setAdapter(chats_adapter);
+
+        newChat = findViewById(R.id.newChat);
+        newChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //ChatDialogueBox dialog = new ChatDialogueBox();
+                //dialog.onCreateDialog();
+                new ChatDialogueBox().show(getSupportFragmentManager(), "");
+            }
+        });
 
     }
 

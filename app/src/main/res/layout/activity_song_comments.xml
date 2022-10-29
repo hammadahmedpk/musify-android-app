@@ -50,12 +50,15 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cmnt"
+        android:layout_marginBottom="10dp"
         android:layout_below="@+id/byartist">
 
     </androidx.recyclerview.widget.RecyclerView>
     <!-- Post a comment -->
     <LinearLayout
+        android:id="@+id/cmnt"
         android:layout_above="@id/footer"
         android:layout_marginBottom="20dp"
         android:layout_width="match_parent"

@@ -8,8 +8,6 @@
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/drawable/img.xml" value="0.1435" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/drawable/round_circle.xml" value="0.1435" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/drawable/test.xml" value="0.1415" />
-        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_add_playlist.xml" value="0.1796875" />
-        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_chat_details.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_chats.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_contacts.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_create_profile.xml" value="0.1796875" />
@@ -21,11 +19,9 @@
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_play_song.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_record_music.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_search.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_second.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_signin.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_signup.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_song_comments.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/activity_upload_music.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/fragment_chat.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/layout.xml" value="0.165625" />
@@ -33,7 +29,6 @@
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/row_contacts.xml" value="0.165625" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/search_song_row.xml" value="0.1796875" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/show_users.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/song_comment_row.xml" value="0.165625" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/menu/menu.xml" value="0.1796875" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/add_photo.xml" value="0.1355" />
@@ -41,7 +36,7 @@
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/receiver_bubble.xml" value="0.1355" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/sender_bubble.xml" value="0.1355" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_add_playlist.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_chat_details.xml" value="0.18" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_chat_details.xml" value="0.33" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_create_profile.xml" value="0.1" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_edit_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_fetch_contacts.xml" value="0.20416666666666666" />
@@ -53,9 +48,10 @@
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_signin.xml" value="0.22" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_signup.xml" value="0.1" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_signup_others.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_song_comments.xml" value="0.15" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/messenger_page_chats_row.xml" value="0.203125" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/online_users_row.xml" value="0.1" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/receiver_message.xml" value="0.25" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/receiver_message.xml" value="0.33" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/row_contacts.xml" value="0.33" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/sender_message.xml" value="0.25" />
       </map>

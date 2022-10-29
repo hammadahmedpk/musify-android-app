@@ -17,12 +17,12 @@
             android:layout_height="wrap_content">
 
             <com.mikhaellopez.circularimageview.CircularImageView
-                app:civ_border_color="@color/black"
                 android:id="@+id/dp"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/icons8_person_64" />
+                android:src="@drawable/icons8_person_64"
+                app:civ_border_color="#000000" />
 
             <TextView
                 android:id="@+id/name"

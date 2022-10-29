@@ -94,7 +94,7 @@ public class CreateProfile extends AppCompatActivity {
         createProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User user = new User(firstName.getText().toString(),lastName.getText().toString(), gender[0],bio.getText().toString(),mAuth.getUid().toString(), "Hello World!", "","false");
+                User user = new User(firstName.getText().toString(),lastName.getText().toString(), gender[0],bio.getText().toString(),mAuth.getUid().toString(), "Hello World!", "","false","");
                 db.getReference().child("Users").child(mAuth.getUid()).setValue(user);
                 storageRef.child("profile_pics").child(mAuth.getUid()).putFile(dpp).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                     @Override

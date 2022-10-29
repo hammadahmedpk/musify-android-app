@@ -56,8 +56,9 @@
             android:layout_below="@+id/name"
             android:layout_marginLeft="2dp"
             android:layout_toRightOf="@+id/dp"
+            android:layout_toLeftOf="@+id/phonecall"
             android:text="Online"
-            android:textSize="13dp" />
+            android:textSize="11dp" />
 
         <!--  Call and Video Call Button  -->
         <ImageView
@@ -69,15 +70,17 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/videocall"/>
+
         <ImageView
             android:id="@+id/phonecall"
-            android:layout_toLeftOf="@+id/videocall"
             android:layout_width="35dp"
             android:layout_height="30dp"
+            android:layout_marginLeft="2dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="30dp"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/icons8_phone_50"/>
+            android:layout_toLeftOf="@+id/videocall"
+            android:background="@drawable/icons8_phone_50" />
     </RelativeLayout>
 
     <!-- RecyclerView -->

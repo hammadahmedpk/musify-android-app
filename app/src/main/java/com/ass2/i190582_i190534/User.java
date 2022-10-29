@@ -1,13 +1,13 @@
 package com.ass2.i190582_i190534;
 
 public class User {
-    String firstName, lastName, gender, bio, user_id, last_message, profile_pic, status;
+    String firstName, lastName, gender, bio, user_id, last_message, profile_pic, status, last_seen;
 
     public User(){
 
     }
 
-    public User(String firstName, String lastName, String gender, String bio, String user_id, String last_message, String profile_pic, String status) {
+    public User(String firstName, String lastName, String gender, String bio, String user_id, String last_message, String profile_pic, String status, String last_seen) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -16,6 +16,15 @@ public class User {
         this.last_message = last_message;
         this.profile_pic = profile_pic;
         this.status = status;
+        this.last_seen = last_seen;
+    }
+
+    public String getLast_seen() {
+        return last_seen;
+    }
+
+    public void setLast_seen(String last_seen) {
+        this.last_seen = last_seen;
     }
 
     public String getUser_id() {

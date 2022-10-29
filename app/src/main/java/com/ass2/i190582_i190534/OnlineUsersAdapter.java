@@ -23,6 +23,8 @@ public class OnlineUsersAdapter extends FirebaseRecyclerAdapter<OnlineUsers, Onl
         // Don't show offline users
 //        if(model.getStatus().equals("true")){
             Picasso.get().load(model.getProfile_pic()).into(holder.image);
+            if(model.getStatus() == "false"){
+            }
 //        }
     }
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <com.mikhaellopez.circularimageview.CircularImageView
-        app:civ_border_color="@color/black"
+        app:civ_border_color="#86EF0D"
         android:id="@+id/image"
         android:layout_width="50dp"
         android:layout_height="50dp"
