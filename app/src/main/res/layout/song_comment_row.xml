@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/profileimage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/profile_page26" />
+
+        <TextView
+            android:id="@+id/comment_line"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/profileimage"
+            android:background="@drawable/comment_box"
+            android:clipToOutline="true"
+            android:paddingLeft="25dp"
+            android:paddingTop="13dp"
+            android:text="What an amazing song"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -53,6 +53,7 @@
         android:layout_marginTop="30dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/byartist">
+
         <ImageView
             android:layout_width="300dp"
             android:layout_height="300dp"
@@ -160,6 +161,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1.5"/>
         <ImageView
+            android:id="@+id/previous_song"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -171,14 +173,15 @@
         <ImageView
             android:id="@+id/playsong"
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:layout_height="30dp"
-            android:src="@drawable/songname_pause_screen5"/>
+            android:background="@drawable/songname_pause_screen5"/>
         <View
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"/>
         <ImageView
+            android:id="@+id/next_song"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -241,6 +244,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/comment"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"

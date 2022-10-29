@@ -1,7 +1,7 @@
 package com.ass2.i190582_i190534;
 
 public class Song {
-    String title, genre, description, image, song;
+    String title, genre, description, image,  url;
 
     public Song (){
 
@@ -12,7 +12,15 @@ public class Song {
         this.genre = genre;
         this.description = description;
         this.image = image;
-        this.song = song;
+
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getImage() {
@@ -21,14 +29,6 @@ public class Song {
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public String getSong() {
-        return song;
-    }
-
-    public void setSong(String song) {
-        this.song = song;
     }
 
     public String getTitle() {
@@ -54,4 +54,5 @@ public class Song {
     public void setGenre(String genre) {
         this.genre = genre;
     }
+
 }

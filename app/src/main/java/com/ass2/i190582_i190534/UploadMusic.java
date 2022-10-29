@@ -80,7 +80,7 @@ public class UploadMusic extends AppCompatActivity {
         uploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Song song = new Song(title.getText().toString(), genre.getText().toString(), description.getText().toString(), "", "");
+                Song song = new Song(title.getText().toString(), genre.getText().toString(), description.getText().toString(), "","");
                 Toast.makeText(UploadMusic.this, "Uploading Song!", Toast.LENGTH_SHORT).show();
                 storageRef.child("audios").child(mAuth.getUid()).child("uploaded_songs").child(song.title).putFile(AudioUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -89,7 +89,7 @@ public class UploadMusic extends AppCompatActivity {
                             task.getResult().getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    db.getReference().child("Songs").child(song.title).child("song").setValue(uri.toString());
+                                    db.getReference().child("Songs").child(song.title).child("url").setValue(uri.toString());
                                 }
                             });
                             Toast.makeText(UploadMusic.this, "Music has been uploaded!", Toast.LENGTH_SHORT).show();

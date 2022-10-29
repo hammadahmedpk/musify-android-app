@@ -86,8 +86,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/footer"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/header_section" />
+        android:layout_below="@id/header_section"
+        android:paddingBottom="20dp" />
 
     <RelativeLayout
         android:id="@+id/footer"

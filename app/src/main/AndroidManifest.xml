@@ -38,7 +38,7 @@
             android:name=".Liked"
             android:exported="false" />
         <activity
-            android:name=".PlaySong"
+            android:name=".MusicLibrary"
             android:exported="false" />
         <activity
             android:name=".SongComments"
@@ -50,7 +50,7 @@
             android:name=".Profile"
             android:exported="false" />
         <activity
-            android:name=".Search"
+            android:name=".PlaySong"
             android:exported="false" />
         <activity
             android:name=".ListenLater"
@@ -77,7 +77,7 @@
             android:name=".Signin"
             android:exported="false" />
         <activity
-            android:name=".MusicLibrary"
+            android:name=".Search"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
