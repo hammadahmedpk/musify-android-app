@@ -1,12 +1,13 @@
 package com.ass2.i190582_i190534;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-//import android.support.v4.media.session.MediaSessionCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -15,7 +16,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-//import androidx.constraintlayout.core.motion.utils.Utils;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,6 +37,8 @@ public class PlaySong extends AppCompatActivity {
     FirebaseDatabase db;
     TextView song_title;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +56,11 @@ public class PlaySong extends AppCompatActivity {
         url = getIntent().getStringExtra("url");
         song_title = findViewById(R.id.song_title);
         song_title.setText(title);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            createChannel();
+        }
+
+        CreateNotification.createNotification(PlaySong.this, title);
 
 
 
@@ -82,6 +89,7 @@ public class PlaySong extends AppCompatActivity {
                 }
                 else{
                     playSong.setBackgroundResource(R.drawable.pause_page14);
+                    Toast.makeText(PlaySong.this, "Playing Song", Toast.LENGTH_SHORT).show();
                     if (number == 0) {
                         mediaPlayer = new MediaPlayer();
                         mediaPlayer.setAudioAttributes(
@@ -215,4 +223,17 @@ public class PlaySong extends AppCompatActivity {
         });
     }
 
+    private void createChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel(CreateNotification.CHANNEL_ID,
+                    "USWA", NotificationManager.IMPORTANCE_LOW);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            if (notificationManager != null){
+                notificationManager.createNotificationChannel(channel);
+            }
+        }
+    }
+
 }
+
