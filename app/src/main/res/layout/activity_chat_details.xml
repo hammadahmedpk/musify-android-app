@@ -105,8 +105,20 @@
             android:layout_marginHorizontal="20dp"
             android:weightSum="1"
             android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/sendPic"
+                app:backgroundTint="@null"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:paddingBottom="3dp"
+                android:src="@drawable/send_photo_camera"
+                android:background="@drawable/send_photobutton_round"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="15dp">
+            </ImageButton>
             <EditText
-                android:layout_weight="0.8"
+                android:layout_weight="0.6"
                 android:id="@+id/etMessage"
                 android:paddingLeft="20dp"
                 android:layout_marginTop="15dp"
@@ -114,7 +126,7 @@
                 android:layout_height="60dp"
                 android:hint="Type your message"
                 android:textStyle="bold"
-                android:background="@drawable/password_rounded_edittext"
+                android:background="@drawable/send_msg_round_et"
                 android:textColorHint="#FCC40F"
                 android:inputType="textMultiLine">
             </EditText>

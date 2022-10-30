@@ -31,12 +31,16 @@
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/layout/show_users.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/ML/AndroidStudioProjects/musify-android-app/app/src/main/res/menu/menu.xml" value="0.1796875" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.135" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/password_rounded_edittext.xml" value="0.155" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable-v24/show_button_rounded.xml" value="0.155" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/add_photo.xml" value="0.1355" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/header_messenger_screen.xml" value="0.1355" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/receiver_bubble.xml" value="0.1355" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/send_msg_round_et.xml" value="0.155" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/send_photobutton_round.xml" value="0.155" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/drawable/sender_bubble.xml" value="0.1355" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_add_playlist.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_chat_details.xml" value="0.33" />
+        <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_chat_details.xml" value="0.25" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_create_profile.xml" value="0.18" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_edit_profile.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/hamma/AndroidStudioProjects/i190582_i190534/app/src/main/res/layout/activity_fetch_contacts.xml" value="0.20416666666666666" />

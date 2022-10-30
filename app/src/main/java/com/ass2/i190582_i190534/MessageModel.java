@@ -4,6 +4,7 @@ public class MessageModel {
     String uID, message;
     String timestamp;
     String messageID;
+    String type;
 
     public MessageModel(){
 
@@ -17,11 +18,20 @@ public class MessageModel {
         this.messageID = messageID;
     }
 
-    public MessageModel(String uID, String message, String timestamp, String messageID) {
+    public MessageModel(String uID, String message, String timestamp, String messageID, String type) {
         this.uID = uID;
         this.message = message;
         this.timestamp = timestamp;
         this.messageID = messageID;
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public MessageModel(String uID, String message, String timestamp) {
