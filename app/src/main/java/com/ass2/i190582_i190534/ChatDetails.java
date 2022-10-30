@@ -156,7 +156,6 @@ public class ChatDetails extends AppCompatActivity {
                         db.getReference().child("Chats").child(receiverRoom).child(randomID).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-
                             }
                         });
                     }

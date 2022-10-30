@@ -464,6 +464,7 @@
                 app:civ_border_color="@color/black" />
 
             <TextView
+                android:id="@+id/name"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -524,7 +525,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="10dp">
                 <Button

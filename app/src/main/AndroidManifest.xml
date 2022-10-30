@@ -67,7 +67,7 @@
             android:name=".ListenLater"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MusicLibrary"
             android:exported="false" />
         <activity
             android:name=".SignupOthers"
@@ -94,7 +94,7 @@
             android:name=".AddSongToPlaylist"
             android:exported="false" />
         <activity
-            android:name=".MusicLibrary"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

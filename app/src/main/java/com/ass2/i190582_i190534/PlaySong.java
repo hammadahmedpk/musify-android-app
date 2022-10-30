@@ -36,6 +36,7 @@ public class PlaySong extends AppCompatActivity {
     String url, title;
     FirebaseDatabase db;
     TextView song_title;
+    ImageView like, search, add;
 
 
 
@@ -219,6 +220,43 @@ public class PlaySong extends AppCompatActivity {
                 db.getReference().child("Listen Later").child(FirebaseAuth.getInstance().getUid()).child(title).child("title").setValue(title);
                 db.getReference().child("Listen Later").child(FirebaseAuth.getInstance().getUid()).child(title).child("url").setValue(url);
 
+            }
+        });
+
+        // For Switching Activities on Footer
+        like = findViewById(R.id.like);
+        like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Liked.class);
+                startActivity(intent);
+            }
+        });
+
+        add = findViewById(R.id.add);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), AddPlaylist.class);
+                startActivity(intent);
+            }
+        });
+
+        search = findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Search.class);
+                startActivity(intent);
+            }
+        });
+
+        listen_later = findViewById(R.id.listen_later);
+        listen_later.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ListenLater.class);
+                startActivity(intent);
             }
         });
     }

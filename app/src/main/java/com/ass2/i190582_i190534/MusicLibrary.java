@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -30,6 +31,7 @@ public class MusicLibrary extends AppCompatActivity {
     ImageView like, search, listen_later;
     Button logout, messenger, music_library;
     FirebaseAuth mAuth;
+    TextView name;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -129,6 +131,20 @@ public class MusicLibrary extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+        name = findViewById(R.id.name);
+        FirebaseDatabase.getInstance().getReference("Users").child(mAuth.getUid()).child("firstName").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@androidx.annotation.NonNull DataSnapshot snapshot) {
+                String firstName = snapshot.getValue(String.class);
+                name.setText(firstName);
+            }
+
+            @Override
+            public void onCancelled(@androidx.annotation.NonNull DatabaseError error) {
+
             }
         });
 
