@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/black"
+tools:context=".SongsLibrary">
+
+<!-- Back Arrow Button and Search Button  -->
+<RelativeLayout
+    android:id="@+id/searchmusicbar"
+    android:layout_width="match_parent"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="25dp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:clickable="true"
+        android:id="@+id/backarrow"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="19dp"
+        android:src="@drawable/backarrow_page9" />
+
+
+    <SearchView
+        android:id="@+id/searchText"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/backarrow"
+        android:background="@drawable/rounded_edit_text"
+        android:paddingLeft="20dp"
+        android:textColor="@color/brown"
+        android:textColorHint="#FCC40F"
+        android:textStyle="bold"></SearchView>
+</RelativeLayout>
+
+<!-- Recent Searches Text -->
+<RelativeLayout
+    android:id="@+id/recentText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/searchmusicbar"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="30dp">
+
+
+</RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recentText" />
+
+<!--  Like, Add, Search Buttons -->
+<RelativeLayout
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:layout_alignParentBottom="true"
+    android:background="#2A2831">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/like_page5" />
+
+        <TextView
+            android:id="@+id/like_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/like"
+            android:layout_marginRight="50dp"
+            android:paddingLeft="8dp"
+            android:text="Liked"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/add"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_toRightOf="@id/like"
+            android:src="@drawable/plus_page5" />
+
+        <TextView
+            android:id="@+id/add_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add"
+            android:layout_marginRight="50dp"
+            android:layout_toRightOf="@id/like_text"
+            android:text="Add"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/search"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="50dp"
+            android:layout_toRightOf="@id/add"
+            android:src="@drawable/search_page5" />
+
+        <TextView
+            android:id="@+id/search_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/search"
+            android:layout_marginRight="25dp"
+            android:layout_toRightOf="@id/add_text"
+            android:text="Search"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/listen_later"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/search"
+            android:src="@drawable/listen_later_page5" />
+        <TextView
+            android:id="@+id/listen_later_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/listen_later"
+            android:layout_toRightOf="@id/search_text"
+            android:text="Listen Later"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+</RelativeLayout>
+
+</RelativeLayout>

@@ -5,134 +5,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".AddPlaylist">
+    tools:context=".AddSongToPlaylist">
 
-    <!-- Back Arrow Button and Title Name -->
+    <!-- Back Arrow Button and Search Button  -->
     <RelativeLayout
-        android:id="@+id/addplaylistbar"
+        android:id="@+id/searchmusicbar"
         android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
         android:layout_height="wrap_content">
-
         <ImageView
             android:clickable="true"
             android:id="@+id/backarrow"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="19dp"
             android:src="@drawable/backarrow_page9" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginLeft="25dp"
+
+        <SearchView
+            android:id="@+id/searchText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/backarrow"
-            android:text="Add Playlist"
-            android:textColor="@color/white"
-            android:textSize="32dp"
-            android:textStyle="bold" />
-        <Button
-            android:id="@+id/next"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="20dp"
-            android:backgroundTint="@color/black"
-            android:paddingLeft="30dp"
-            android:paddingTop="8dp"
-            android:text="Next"
-            android:textAllCaps="false"
-            android:textColor="@color/yellow"
-            android:textSize="15dp" />
-    </RelativeLayout>
-
-    <!-- Icon of Upload -->
-    <RelativeLayout
-        android:id="@+id/upload"
-        android:layout_width="match_parent"
-        android:layout_below="@id/addplaylistbar"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:layout_marginTop="30dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_width="220dp"
-            android:layout_height="200dp"
-            android:src="@drawable/rounded_image_upload"/>
-
-        <ImageView
-            android:id="@+id/upload_playlist"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="60dp"
-            android:src="@drawable/upload_page9" />
-    </RelativeLayout>
-
-    <!-- Playlist Name -->
-    <RelativeLayout
-        android:id="@+id/playlistname"
-        android:layout_below="@id/upload"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/playlist_name"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/backarrow"
             android:background="@drawable/rounded_edit_text"
-            android:hint="Playlist Name"
             android:paddingLeft="20dp"
             android:textColor="@color/brown"
             android:textColorHint="#FCC40F"
-            android:textStyle="bold"></EditText>
+            android:textStyle="bold"></SearchView>
     </RelativeLayout>
 
-    <!-- Description -->
+    <!-- Recent Searches Text -->
     <RelativeLayout
-        android:id="@+id/descriptionname"
-        android:layout_below="@id/playlistname"
+        android:id="@+id/recentText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:id="@+id/description"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/rounded_edit_text"
-            android:hint="Description"
-            android:paddingLeft="20dp"
-            android:textColor="@color/brown"
-            android:textColorHint="#FCC40F"
-            android:textStyle="bold"></EditText>
-    </RelativeLayout>
-
-    <!-- Add Playlist Button -->
-    <Button
-        android:id="@+id/addPlaylist"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@id/footer"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="20dp"
+        android:layout_below="@id/searchmusicbar"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="45dp"
-        android:background="@drawable/rounded_yellow_button"
-        android:drawableTint="@color/yellow"
-        android:text="Add Playlist"
-        android:textAllCaps="false"
-        android:textSize="17dp"
-        app:backgroundTint="@null" />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp">
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/recentText"
+        android:layout_above="@id/add1"/>
 
     <!--  Like, Add, Search Buttons -->
+    <Button
+        android:id="@+id/add1"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        app:backgroundTint="@null"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:background="@drawable/rounded_yellow_button"
+        android:layout_above="@id/footer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:text="Add">
+
+    </Button>
     <RelativeLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"

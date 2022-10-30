@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -20,13 +19,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 public class MusicLibrary extends AppCompatActivity {
 
     ImageView startAddPlaylist, dp;
     ImageButton profileBtn;
     ImageView like, search, listen_later;
-    Button logout, messenger;
-
+    Button logout, messenger, music_library;
     FirebaseAuth mAuth;
 
     @SuppressLint("WrongViewCast")
@@ -99,10 +99,17 @@ public class MusicLibrary extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
-//                OnlineStatus.updateUserStatus();
                 finish();
                 Intent switchActivityIntent = new Intent(getApplicationContext(), Signup.class);
                 startActivity(switchActivityIntent);
+            }
+        });
+        music_library = findViewById(R.id.song_library);
+        music_library.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MusicLibrary.this, SongsLibrary.class);
+                startActivity(intent);
             }
         });
 

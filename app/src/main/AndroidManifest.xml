@@ -84,6 +84,12 @@
             android:name=".Signin"
             android:exported="false" />
         <activity
+            android:name=".SongsLibrary"
+            android:exported="false"/>
+        <activity
+            android:name=".AddSongToPlaylist"
+            android:exported="false"/>
+        <activity
             android:name=".MusicLibrary"
             android:exported="true">
             <intent-filter>

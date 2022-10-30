@@ -30,19 +30,20 @@
             android:textColor="@color/white"
             android:textSize="29dp"
             android:textStyle="bold" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="20dp"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
             android:backgroundTint="@color/black"
-            android:paddingTop="8dp"
             android:paddingLeft="30dp"
+            android:paddingTop="8dp"
             android:text="Next"
-            android:textSize="15dp"
+            android:textAllCaps="false"
             android:textColor="@color/yellow"
-            android:textAllCaps="false"/>
+            android:textSize="15dp" />
     </RelativeLayout>
     <!-- Despacito Image -->
     <RelativeLayout
@@ -63,12 +64,12 @@
     <!-- Seekbar  -->
     <SeekBar
         android:id="@+id/seekbar"
-        android:layout_below="@id/despacitoImage"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="50dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/despacitoImage"
         android:layout_marginLeft="50dp"
-        android:layout_height="wrap_content" />
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp" />
 
     <LinearLayout
         android:id="@+id/songTime"
@@ -89,28 +90,64 @@
     <!-- Record/Play Buttons -->
     <LinearLayout
         android:id="@+id/recordVoice"
-        android:layout_below="@id/songTime"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/songTime"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:layout_height="wrap_content">
+        android:layout_marginRight="20dp"
+        android:gravity="center">
+
         <ImageView
             android:id="@+id/record"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginRight="23dp"
-            android:background="@drawable/circle_page11"/>
+            android:background="@drawable/circle_page11" />
+
         <ImageView
             android:id="@+id/pause"
-            android:layout_toRightOf="@id/record"
             android:layout_width="25dp"
             android:layout_height="35dp"
-            android:background="@drawable/songname_pause_screen5"/>
+            android:layout_toRightOf="@id/record"
+            android:background="@drawable/songname_pause_screen5" />
 
     </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/playlistname"
+        android:layout_below="@id/recordVoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <EditText
+            android:id="@+id/playlist_name"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_edit_text"
+            android:hint="Recording Name"
+            android:paddingLeft="20dp"
+            android:textColor="@color/brown"
+            android:textColorHint="#FCC40F"
+            android:textStyle="bold"></EditText>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/upload_recording"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/footer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/rounded_yellow_button"
+        android:drawableTint="@color/yellow"
+        android:text="Upload"
+        android:textAllCaps="false"
+        android:textSize="17dp"
+        app:backgroundTint="@null" />
     <!--  Like, Add, Search Buttons -->
     <RelativeLayout
         android:id="@+id/footer"

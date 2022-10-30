@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:background="@color/black"
     tools:context=".MusicLibrary">
-    
+
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer"
         android:layout_width="match_parent"
@@ -28,16 +28,16 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="15dp"
                     android:src="@drawable/sidebar2"></ImageButton>
+
                 <ImageButton
                     android:id="@+id/profileBtn"
-                    android:backgroundTint="@color/black"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginRight="20dp"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/profile_page26">
-                </ImageButton>
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="@color/black"
+                    android:src="@drawable/profile_page26"></ImageButton>
             </RelativeLayout>
 
             <!-- Playlists Images and Text -->
@@ -476,6 +476,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Messenger"
+                android:textSize="18dp"
+                android:backgroundTint="@color/brown"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/yellow"/>
+            <Button
+                android:id="@+id/song_library"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Song Library"
                 android:textSize="18dp"
                 android:backgroundTint="@color/brown"
                 android:textStyle="bold"
