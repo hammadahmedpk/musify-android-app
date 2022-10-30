@@ -24,7 +24,7 @@ public class ChatDialogueBox extends AppCompatDialogFragment{
                         }
                         else
                         {
-                            Intent intent = new Intent(getActivity(), ListenLater.class);
+                            Intent intent = new Intent(getActivity(), GroupChat.class);
                             startActivity(intent);
                         }
                     }

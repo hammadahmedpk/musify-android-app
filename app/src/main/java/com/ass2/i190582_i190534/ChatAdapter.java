@@ -65,7 +65,7 @@ public class ChatAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemViewType(int position) {
-        if(messageModels.get(position).getuID().equals(FirebaseAuth.getInstance().getUid())){
+        if(messageModels.get(position).getuID() != null && messageModels.get(position).getuID().equals(FirebaseAuth.getInstance().getUid())){
             return SENDER_VIEW_TYPE;
         }
         else{
@@ -86,9 +86,6 @@ public class ChatAdapter extends RecyclerView.Adapter{
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        //MessageDialogueBox msg = new MessageDialogueBox();
-                        ////Toast.makeText(context, messageModel.getMessage().toString(), Toast.LENGTH_SHORT).show();
-                        //new MessageDialogueBox().show(msg.getChildFragmentManager(),"");
                         String [] chats = {"Edit Message", "Delete Message"};
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
                         builder.setTitle("Message Options")
@@ -107,15 +104,24 @@ public class ChatAdapter extends RecyclerView.Adapter{
 
                                                             // Updating the message in Database
 
-                                                            // Updating in Sender Room
-                                                            final String senderRoom = senderID + receiverID;
-                                                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(senderRoom).child(messageModels.get(position).getMessageID());
-                                                            dbRef.child("message").setValue(textMsg);
+                                                            // If its group chat
+                                                            if(receiverID.equals("group")){
+                                                                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Group Chats").child(messageModels.get(position).getMessageID());
+                                                                dbRef.child("message").setValue(textMsg);
+                                                            }
+                                                            // If its one to one chat
+                                                            else
+                                                            {
+                                                                // Updating in Sender Room
+                                                                final String senderRoom = senderID + receiverID;
+                                                                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(senderRoom).child(messageModels.get(position).getMessageID());
+                                                                dbRef.child("message").setValue(textMsg);
 
-                                                            // Updating from Receiver Room
-                                                            final String receiverRoom = receiverID + senderID;
-                                                            dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(receiverRoom).child(messageModels.get(position).getMessageID());
-                                                            dbRef.child("message").setValue(textMsg);
+                                                                // Updating from Receiver Room
+                                                                final String receiverRoom = receiverID + senderID;
+                                                                dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(receiverRoom).child(messageModels.get(position).getMessageID());
+                                                                dbRef.child("message").setValue(textMsg);
+                                                            }
                                                         }
                                                     })
                                                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -126,15 +132,23 @@ public class ChatAdapter extends RecyclerView.Adapter{
                                         }
                                         else
                                         {
-                                            // Deleting from Sender Room
-                                            final String senderRoom = senderID + receiverID;
-                                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(senderRoom).child(messageModels.get(position).getMessageID());
-                                            dbRef.removeValue();
+                                            // If its group chat
+                                            if(receiverID.equals("group")){
+                                                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Group Chats").child(messageModels.get(position).getMessageID());
+                                                dbRef.removeValue();
+                                            }
+                                            // If its one to one chat
+                                            else {
+                                                // Deleting from Sender Room
+                                                final String senderRoom = senderID + receiverID;
+                                                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(senderRoom).child(messageModels.get(position).getMessageID());
+                                                dbRef.removeValue();
 
-                                            // Deleting from Receiver Room
-                                            final String receiverRoom = receiverID + senderID;
-                                            dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(receiverRoom).child(messageModels.get(position).getMessageID());
-                                            dbRef.removeValue();
+                                                // Deleting from Receiver Room
+                                                final String receiverRoom = receiverID + senderID;
+                                                dbRef = FirebaseDatabase.getInstance().getReference("Chats").child(receiverRoom).child(messageModels.get(position).getMessageID());
+                                                dbRef.removeValue();
+                                            }
                                         }
                                     }
                                 });
