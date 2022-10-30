@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -25,14 +27,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.IOException;
 
 public class PlaySong extends AppCompatActivity {
-    ImageView playSong, nextSong, previousSong, comment;
-    FirebaseDatabase db;
+    ImageView playSong, nextSong, previousSong, comment, like_song, listen_later;
     int number = 0;
     private SeekBar seekBar;
     MediaPlayer mediaPlayer;
     private Handler mHandler = new Handler();
     DataSnapshot dataSnapshot;
     String url, title;
+    FirebaseDatabase db;
+    TextView song_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +47,19 @@ public class PlaySong extends AppCompatActivity {
         nextSong = findViewById(R.id.next_song);
         previousSong = findViewById(R.id.previous_song);
         comment = findViewById(R.id.comment);
-
+        like_song = findViewById(R.id.like_song);
+        listen_later = findViewById(R.id.listen_later1);
+        db = FirebaseDatabase.getInstance();
         title = getIntent().getStringExtra("title");
         url = getIntent().getStringExtra("url");
+        song_title = findViewById(R.id.song_title);
+        song_title.setText(title);
+
 
 
         // Snapshot
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        reference.child("Songs").keepSynced(true);
         reference.child("Songs").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
@@ -58,7 +67,6 @@ public class PlaySong extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     if (task.getResult().exists()) {
                         dataSnapshot = task.getResult();
-                        Log.d("SS", dataSnapshot.toString());
                     }
                 }
             }
@@ -187,6 +195,24 @@ public class PlaySong extends AppCompatActivity {
             startActivity(intent);
         }
     });
+    like_song.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Toast.makeText(PlaySong.this, "Song Liked!", Toast.LENGTH_SHORT).show();
+            db.getReference().child("Liked Songs").child(FirebaseAuth.getInstance().getUid()).child(title).child("title").setValue(title);
+            db.getReference().child("Liked Songs").child(FirebaseAuth.getInstance().getUid()).child(title).child("url").setValue(url);
+
+        }
+    });
+        listen_later.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(PlaySong.this, "Added to Listen Later!", Toast.LENGTH_SHORT).show();
+                db.getReference().child("Listen Later").child(FirebaseAuth.getInstance().getUid()).child(title).child("title").setValue(title);
+                db.getReference().child("Listen Later").child(FirebaseAuth.getInstance().getUid()).child(title).child("url").setValue(url);
+
+            }
+        });
     }
 
 }

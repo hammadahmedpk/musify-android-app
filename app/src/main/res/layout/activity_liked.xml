@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+    android:id="@+id/activity_like"
     tools:context=".Liked">
 
     <!-- Back Arrow Button and Record Music -->
@@ -36,22 +37,11 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <TextView
-        android:layout_below="@id/likedbar"
-        android:id="@+id/aboveText"
-        android:textColor="#3E3B3B"
-        android:textStyle="bold"
-        android:textSize="15dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2 Options / Left Selected"
-        />
     <!--  Buttons  -->
     <RelativeLayout
         android:id="@+id/buttons"
         android:layout_width="match_parent"
-        android:layout_below="@id/aboveText"
+        android:layout_below="@id/likedbar"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
@@ -67,17 +57,6 @@
             android:layout_marginRight="8dp"
             android:weightSum="1">
             <Button
-                android:id="@+id/playlistBtn"
-                app:backgroundTint="@null"
-                android:layout_marginTop="6dp"
-                android:layout_alignParentStart="true"
-                android:layout_width="100dp"
-                android:layout_height="48dp"
-                android:text="Playlist"
-                android:textStyle="bold"
-                android:layout_weight="0.5"
-                android:background="@drawable/rounded_yellow_button"/>
-            <Button
                 android:id="@+id/musicBtn"
                 app:backgroundTint="@null"
                 android:layout_marginTop="6dp"
@@ -87,9 +66,27 @@
                 android:text="Music"
                 android:textStyle="bold"
                 android:layout_weight="0.5"
+                android:background="@drawable/rounded_yellow_button"/>
+            <Button
+                android:id="@+id/playlistBtn"
+                app:backgroundTint="@null"
+                android:layout_marginTop="6dp"
+                android:layout_alignParentStart="true"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:text="Playlist"
+                android:textStyle="bold"
+                android:layout_weight="0.5"
                 android:background="@drawable/comment_box"/>
         </LinearLayout>
     </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/buttons"
+        android:layout_above="@id/footer"/>
 
     <!-- Songs-->
     <RelativeLayout
@@ -99,117 +96,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp">
-
-        <!-- First Song -->
-        <RelativeLayout
-            android:id="@+id/song1"
-            android:layout_width="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_height="90dp">
-
-            <ImageView
-                android:id="@+id/image1"
-                android:layout_width="90dp"
-                android:layout_height="80dp"
-                android:background="@drawable/playlist_screen5" />
-            <TextView
-                android:id="@+id/text1"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Playlist 1"
-                android:textSize="18dp"
-                android:textColor="@color/white"/>
-            <TextView
-                android:id="@+id/text2"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@id/image1"
-                android:layout_below="@id/text1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Artist"
-                android:textSize="18dp"
-                android:textColor="@color/yellow"/>
-            <ImageView
-                android:id="@+id/options1"
-                android:layout_width="20dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentEnd="true"
-                android:layout_height="20dp"
-                android:src="@drawable/options"/>
-
-            <TextView
-                android:id="@+id/sideText1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_toLeftOf="@id/options1"
-                android:paddingBottom="20dp"
-                android:text="Tracks: 8"
-                android:textColor="@color/white"
-                android:textSize="12dp" />
-
-        </RelativeLayout>
-        <!-- Second Song -->
-        <RelativeLayout
-            android:id="@+id/song2"
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:layout_below="@id/song1"
-            android:layout_marginTop="10dp">
-
-            <ImageView
-                android:id="@+id/image2"
-                android:layout_width="90dp"
-                android:layout_height="80dp"
-                android:background="@drawable/playlist_screen5" />
-
-            <TextView
-                android:id="@+id/text3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/image2"
-                android:text="Playlist 2"
-                android:textColor="@color/white"
-                android:textSize="18dp" />
-
-            <TextView
-                android:id="@+id/text4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/text3"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/image2"
-                android:text="Artist"
-                android:textColor="@color/yellow"
-                android:textSize="18dp" />
-
-            <ImageView
-                android:id="@+id/options2"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/options" />
-
-            <TextView
-                android:id="@+id/sideText2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_toLeftOf="@id/options2"
-                android:paddingBottom="20dp"
-                android:text="Tracks: 3"
-                android:textColor="@color/white"
-                android:textSize="12dp" />
-
-        </RelativeLayout>
 
     </RelativeLayout>
 

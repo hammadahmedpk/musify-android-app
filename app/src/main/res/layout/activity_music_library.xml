@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/black"
-    tools:context=".MusicLibrary">
+
+    tools:context=".MusicLibrary"
+    android:id="@+id/music_lib"
+    >
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer"

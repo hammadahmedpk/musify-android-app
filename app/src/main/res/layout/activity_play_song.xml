@@ -14,7 +14,9 @@
         android:layout_marginTop="15dp"
         android:layout_marginRight="20dp"
         android:layout_height="wrap_content">
+
         <TextView
+            android:id="@+id/song_title"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_marginLeft="25dp"
@@ -216,6 +218,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/like_song"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -235,6 +238,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
         <ImageView
+            android:id="@+id/listen_later1"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
